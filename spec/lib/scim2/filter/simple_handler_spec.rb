@@ -28,6 +28,16 @@ describe Scim2::Filter::SimpleHandler do
     )
   end
 
+  specify 'userName eq "Göteborg"' do
+    expect(parsed_result).to eq(
+      eq: {
+        path:   [:userName],
+        schema: nil,
+        value:  'Göteborg',
+      },
+    )
+  end
+
   specify 'name.familyName co "O\'Malley"' do
     expect(parsed_result).to eq(
       co: {
